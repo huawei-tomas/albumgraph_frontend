@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,400,600');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
+body,
+html {
+  background: black;
+  overflow: hidden;
+  font: 16px 'Titillium Web', sans-serif;
+}
+body.light,
+html.light {
+  background: white;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+input {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: white;
+  padding: 1px 4px 2px;
+}
+svg .nodes path.region {
+  fill: #bf0 !important;
+}
+svg .nodes path.label {
+  fill: #f80 !important;
+}
+
+.labels {
+  pointer-events: none;
+}
+.labels text {
+  fill: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  fill-opacity: 0.5;
+}
+.labels text.primary {
+  font-size: 20px;
+  font-weight: 200;
+  fill-opacity: 1;
+}
+.light .labels text {
+  fill: black;
+}
+
+.links path {
+  stroke: white;
+  stroke-opacity: 0.3;
+  transition: stroke-opacity 0.25s ease-out;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+.links path.primary {
+  stroke-opacity: 0.75;
+}
+.links path.secondary {
+  stroke-opacity: 0.25;
+}
+.links path.tertiary {
+  stroke-opacity: 0.05;
+}
+.nodes path {
+  fill: #0AF;
+  opacity: 0.8;
+  transition: opacity 0.25s ease-out;
+  transform: translateZ(0);
+}
+.nodes path.primary {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.nodes path.secondary {
+  opacity: 0.5;
+}
+.nodes path.tertiary {
+  opacity: 0.2;
+}
+.tooltip {
+  position: absolute;
+  background: #333;
+  padding: 4px;
+  border-radius: 4px;
+}
+.tooltip:before {
+  content: '';
+  position: absolute;
+  background: #333;
+  top: 6px;
+  left: -4px;
+  height: 14px;
+  width: 14px;
+  transform: rotate(45deg);
+}
+.tooltip img {
+  display: block;
+  position: relative;
+  max-width: 200px;
+  max-height: 200px;
+}
+.light .links path {
+  stroke: #888;
+}
+.light .nodes path:not(.pulse) {
+  stroke: white;
+}
+
+header {
+  padding: 6px 16px;
+  position: fixed;
+  top: 0;
+  text-shadow: 0 0 8px black;
+  color: #FFF;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+.light header {
+  color: #000;
+  text-shadow: 0 0 8px white;
+}
+
+.panel {
+  position: absolute;
+  left: 16px;
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  border-top: 1px solid #08f;
+  border-bottom: 1px solid #08f;
+  background: rgba(0, 0, 0, 0.5);
+}
+.panel:after {
+  content: '';
+  position: absolute;
+  width: 33%;
+  height: 2px;
+  top: 0;
+  right: 0;
+  background: #08f;
+}
+.panel:before {
+  content: '';
+  position: absolute;
+  width: 33%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #08f;
+}
+.panel > div,
+.panel > label {
+  padding: 5px 5px;
+}
+.panel.legend {
+  top: 46px;
+  height: 130px;
+}
+.panel.output {
+  top: 192px;
+  height: 136px;
+}
+.panel.output > div:not(:first-of-type) {
+  padding: 0 5px;
+}
+.panel .text-input {
+  display: inline-block;
+  width: 47%;
+  margin-right: 6px;
+}
+.panel .text-input div:first-of-type {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7em;
+}
+.panel .text-input input {
+  width: 100%;
+}
+.panel .title {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.panel label {
+  cursor: pointer;
+}
+.panel label input[type="checkbox"] {
+  margin: 3px 1ch 0 2px;
+}
+.panel label span {
+  vertical-align: top;
+}
+.panel .legend-item div:first-of-type {
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  float: left;
+  margin-right: 8px;
+}
+.panel .legend-item.image div:first-of-type {
+  background: #0AF;
+}
+.panel .legend-item.region div:first-of-type {
+  background: #bf0;
+}
+.panel .legend-item.label div:first-of-type {
+  background: #f80;
+}
+.light .panel {
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
