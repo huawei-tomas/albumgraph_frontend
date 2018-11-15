@@ -33,10 +33,10 @@ input {
   padding: 1px 4px 2px;
 }
 svg .nodes path.region {
-  fill: #bf0 !important;
+  fill: #be0 !important;
 }
 svg .nodes path.label {
-  fill: #f80 !important;
+  fill: #f70 !important;
 }
 
 .labels {
@@ -142,7 +142,7 @@ header {
   font-weight: 300;
   border-top: 1px solid #08f;
   border-bottom: 1px solid #08f;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
 }
 .panel:after {
   content: '';
@@ -172,10 +172,22 @@ header {
 }
 .panel.output {
   top: 192px;
-  height: 136px;
+  height: 100px;
 }
 .panel.output > div:not(:first-of-type) {
   padding: 0 5px;
+}
+.panel.output .subtitle {
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+}
+.panel.output .sub {
+  margin-left: 20px;
+}
+.panel.render {
+  top: 308px;
+  height: 100px;
 }
 .panel .text-input {
   display: inline-block;
@@ -207,6 +219,10 @@ header {
 .panel label span {
   vertical-align: top;
 }
+.panel .legend-item {
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+}
 .panel .legend-item div:first-of-type {
   height: 18px;
   width: 18px;
@@ -218,10 +234,13 @@ header {
   background: #0AF;
 }
 .panel .legend-item.region div:first-of-type {
-  background: #bf0;
+  background: #be0;
 }
 .panel .legend-item.label div:first-of-type {
-  background: #f80;
+  background: #f70;
+}
+.panel .legend-item.faded {
+  opacity: 0.3;
 }
 .light .panel {
   background: rgba(255, 255, 255, 0.5);
